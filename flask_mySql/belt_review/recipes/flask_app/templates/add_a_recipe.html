@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe!</title>
+    <style>
+        .body, body{
+            background-color: mistyrose;
+        }
+        .navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            color:mistyrose;
+            background-color: palevioletred;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar a{
+            color: mistyrose;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .info{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: Arial, Helvetica, sans-serif;
+            color: palevioletred;
+            font-weight: bolder;
+        }
+        .meat{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 400px;
+        }
+        .potatoes{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 400px;
+        }
+        input[type=submit]{
+            background-color: palevioletred;
+            color:mistyrose;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 15%;
+            border: none;
+            width: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="navbar">
+            <h1>Add a new Recipe:</h1>
+            <a class="nav-link" href="/welcome">Back to Recipes</a>
+            <a class="nav-link" href="/logout">Logout</a>
+        </div>
+        {% with messages=get_flashed_messages(category_filter=['recipe'])%}
+        {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/submit" method="POST">
+        <div class="info">
+            <div class="meat">
+                <div class="text_info">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="description">
+                    <label for="description">Description:</label>
+                    <input type="textarea" name="description">
+                </div>
+                <div class="instruction">
+                    <label for="instruction">Instructions:</label>
+                    <input type="textarea" name="instruction">
+                </div>
+            </div>
+            <div class="potatoes">
+                <div>
+                    <div>
+                        <h3>Date Cooked/Made:</h3>
+                    </div>
+                    <div>
+                        <input type="date" name="date">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3>Under 30 minutes?</h3>
+                    </div>
+                    <div>
+                        <label for="radio">Yes:</label>
+                        <input type="radio" value="1" name="time">
+                    </div>
+                    <div>
+                        <label for="radio">No:</label>
+                        <input type="radio" value="0" name="time">
+                    </div>
+                </div>
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

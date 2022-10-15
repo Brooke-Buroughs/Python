@@ -1,0 +1,19 @@
+we need to store:
+
+recipes:
+    name
+    description
+    instructions
+    date cooked/made
+    under 30 minutes?
+
+users:
+    first name
+    last name
+    email
+    password, (confirm password)
+
+a recipe has only one user 
+
+a user can have many recipes 
+

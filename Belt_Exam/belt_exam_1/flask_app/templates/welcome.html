@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="POST">
+        <div class="navbar">
+            <div class="head">
+                <h1>Welcome, {{one_user.first_name}} </h1>
+                <a href="/logout">Logout</a>
+            </div>
+            <div class="post">
+                <input type="text" name="content">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <div class="users">
+            {% for a_thought in all_thoughts %}
+            <div>
+                <a>{{a_thought.user.first_name}} says:</a>
+                <p>{{a_thought.content}}</p>
+                <a href="/add_one">Like</a>
+                <a href="/unlike">Un-like</a>
+                <p>{{a_thought.likes}} likes</p>
+                <a href="/delete">Delete</a>
+                <!--make route for a tag to display users thoughts-->
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

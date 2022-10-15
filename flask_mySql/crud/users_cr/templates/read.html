@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        body{
+            background-color: mistyrose;
+            color: palevioletred;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .users{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+        #a,#b,#c{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #btn{
+            color: palevioletred;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Users:</h1>
+    </div>
+    <div class="users">
+        {% for one_user in all_users %}
+        <div id="a">
+            <p>First Name:</p><p>{{one_user.first_name}}</p>
+        </div>
+        <div id="b">
+            <p>Last Name: </p><p>{{one_user.last_name}}</p>
+        </div>
+        <div id="c">
+            <p>Email: </p><p>{{one_user.email}}</p>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    <div class="create">
+        <a href="/show" id="btn">Create User:</a>
+    </div>
+</body>
+</html>

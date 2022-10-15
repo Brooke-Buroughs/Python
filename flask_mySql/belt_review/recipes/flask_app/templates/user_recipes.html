@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <style>
+        body{
+            background-color: mistyrose;
+            color: palevioletred;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bolder;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: palevioletred;
+        }
+        #recipes{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #recipes td, #recipes th{
+            border: 1px solid pink;
+            padding: 8px;
+        }
+        #recipes tr:nth-child(even){
+            background-color: pink;
+        }
+        #recipes th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: palevioletred;
+            color: mistyrose;
+        }
+        #recipes td a{
+            text-decoration: none;
+            color: palevioletred;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome, {{one_user.first_name}}</h1>
+        <div>
+            <div class="navbar">
+                <div class="label">
+                    <p>All posted recipes:</p>
+                </div>
+                <div class="create">
+                    <a href="/create">+Create</a>
+                </div>
+                <div class="logout">
+                    <a href="/logout">logout</a>
+                </div>
+            </div>
+            <div class="table">
+                <table id="recipes">
+                    <tr>
+                        <th>Name</th>
+                        <th>Under</th>
+                        <th>Posted By</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for a_recipe in all_recipes %}
+                    <tr>
+                        <td>{{a_recipe.name}}</td>
+                        <td>{{"yes" if a_recipe.time==1 else "no"}}</td>
+                        <td>{{a_recipe.user.first_name}}</td>
+                        <td><a href="/edit/{{a_recipe.id}}">edit</a>|<a href="/view/{{a_recipe.id}}">view</a>|<a href="/delete/{{a_recipe.id}}">delete</a></td>
+                    {% endfor %}
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

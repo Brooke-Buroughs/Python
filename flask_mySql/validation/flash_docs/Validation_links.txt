@@ -1,0 +1,11 @@
+https://docs.python.org/3.6/library/stdtypes.html#str.isalpha
+
+returns a boolean that shows whether a string contains only alphanumeric characters
+
+https://docs.python.org/3.6/library/stdtypes.html#string-methods
+
+other string methods
+
+https://docs.python.org/3.6/library/time.html#time.strptime
+
+changes a string to a time using the given format 

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Open Account</title>
+    <style>
+        body{
+            background-color: mistyrose;
+            color: palevioletred;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .register, .login{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .fname, .lname, .email, .pword, .cpword{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        .btn{
+            display: flex;
+            flex-direction:row-reverse;
+        }
+        input[type=submit]{
+            margin-top: 20px;
+            background-color: palevioletred;
+            color:mistyrose;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 15%;
+            border: none;
+            width: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>TV Shows!</h1>
+        <form action="/create_account" method="POST">
+        <div class="container">
+            <div class="register">
+                <h1>Register</h1>
+                {% with messages=get_flashed_messages(category_filter=['register'])%}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="fname">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname">
+                </div>
+                <div class="lname">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname">
+                </div>
+                <div class="email">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="pword">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="cpword">
+                    <label for="cpass">Confirm Password:</label>
+                    <input type="password" name="cpass">
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+        <form action="/login" method="POST">
+            <div class="login">
+                <h1>Login</h1>
+                {% with messages=get_flashed_messages(category_filter=['login'])%}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+                <div class="email">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="pword">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

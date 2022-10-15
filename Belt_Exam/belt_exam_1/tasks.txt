@@ -1,0 +1,15 @@
+install everything
+create 'flask_app' folder 
+    __init__.py 
+    config folder
+        mysqlconnection.py
+    controllers
+        'function'.py
+    models
+        'classes'.py 
+    templates
+        all.html 
+
+server.py
+pip files 
+tasks.txt

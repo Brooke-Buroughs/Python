@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground 1</title>
+    <style>
+        body{
+            background-color:palevioletred;
+        }
+        h1{
+            color: pink;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        div.boxes{
+            background-color: lightpink;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            display: inline-block;
+            border: solid 2px mistyrose;
+        }
+        div.boxbox{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <div class="boxbox">
+        {%for i in range(3):%} <!--for loop needed for boxes input in url. i variable loop through 3 times to make 3 boxes-->
+        <div class="boxes"></div>
+        {%endfor%}
+    </div>
+</body>
+</html>

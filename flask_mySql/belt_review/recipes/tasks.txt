@@ -1,0 +1,36 @@
+on recipe_share.html:
+    login authentication:
+        email must already exist in DB
+        password checked to match
+    login validation:
+        first and last name must be at least 2 characters
+        email must have valid email format
+        password and confirm password must match
+        user cannot already exist in the database
+
+on user_recipes.html:
+    'create' link should render the create page 
+    'logout' link should clear the user session, redirects to the login page
+    user must be logged in to view this page
+    only show edit and delete if the recipe was created by the logged user
+    'delete' link removes the recipe and redirects back to this page
+    'edit' link renders the edit page for that recipe
+    'view recipe' link renders the recipe details page for that recipe
+
+on add_a_recipe.html:
+    redirect back to show error page for blank boxes
+    user must be logged in to see this page 
+    all fields required
+    name, description, and instructions must be at least 3 characters
+    after creation, redirect to the dashboard (submit button)
+
+on recipe_selected.html:
+    display selected recipe 
+
+on edit_recipe.html:
+    redirected back to show error messages for blank boxes
+    user must be logged in to see this page 
+    same validations as for create
+    pre-populate the fields
+    after update, redirect to the recipes dashboard 
+

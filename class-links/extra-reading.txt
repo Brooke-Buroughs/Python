@@ -1,0 +1,25 @@
+Python Dictionary Methods:
+https://www.w3schools.com/python/python_ref_dictionary.asp
+
+Built-in Python Functions:
+https://docs.python.org/3/library/functions.html
+https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+
+Data structures python:
+https://docs.python.org/3/tutorial/datastructures.html
+
+Random numbers:
+https://docs.python.org/3/library/random.html
+
+Bits and Bytes:
+https://web.stanford.edu/class/cs101/bits-bytes.html
+
+Python library:
+https://docs.python.org/3.6/library/index.html
+https://docs.python.org/3/library/index.html
+
+Primer on Python Decorators:
+https://realpython.com/primer-on-python-decorators/
+
+
+

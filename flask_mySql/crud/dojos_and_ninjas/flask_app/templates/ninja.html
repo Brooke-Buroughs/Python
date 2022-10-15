@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New ninja</title>
+    <style>
+        body{
+            background-color: mistyrose;
+            color: palevioletred;
+        }
+        input[type=submit]{
+            background-color: palevioletred;
+            color: mistyrose;
+            border: none;
+        }
+        a{
+            text-decoration: none;
+            color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>New Ninja</h1>
+    </div>
+    <form action="/ninjas/create" method="POST"> 
+        <div class="container">
+            <div>
+                <label for="dojo">Dojo:</label>
+                <select name="dojo">
+                    {% for one_dojo in all_dojos %}
+                    <option value="{{one_dojo.id}}">{{one_dojo.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname">
+            </div>
+            <div>
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname">
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="text" name="age">
+            </div>
+            <div>
+                <input type="submit" value="Create">
+            </div>
+        </div>
+    </form>
+    <div>
+        <a href="/dojos">Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+tasks:
+    1. create a new flask project
+    2. use dojos_and_ninjas_schema created in MySQL course
+    3. "Dojo" page to add a new Dojo and display all Dojos
+    4. The dojo links on the 'Dojo' page should redirect the 'Dojo Show' page
+    5. 'Ninja' page to add a new Ninja
+    6. 'Ninja' page should include a drop down menu with all of the ninjas in the database
+    7. Redirect to the 'Dojo Show' page of the dojo selected after creating a ninja
+    8. 'Dojo Show' page should display all the Ninjas who are added to the Dojo (html)
+    9. All Home links should redirect to 'localhost:5000/dojos'

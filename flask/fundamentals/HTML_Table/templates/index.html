@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Table</title>
+    <style>
+        #users{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #users td, #customers th{
+            border: 1px solid white;
+            padding: 8px;
+        }
+        #users tr{
+            background-color: pink;
+        }
+        #users tr:hover{
+            background-color: palevioletred;
+            color: white;
+        }
+        #users th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 8px;
+            text-align: left;
+            background-color: palevioletred;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table id="users">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+        </tr>
+        <tbody>
+            {% for name in all_the_names %}
+            <tr>
+                <td>{{name['first_name']}}</td>
+                <td>{{name['last_name']}}</td>
+                <td>{{(name['first_name']+'  ') + (name['last_name'])}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

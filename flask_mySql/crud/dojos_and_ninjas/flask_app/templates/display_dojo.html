@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Add Dojo</title>
+    <style>
+        body{
+            background-color: mistyrose;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            color: palevioletred;
+            display: flex;
+            justify-content: center;
+        }
+        #info{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #info td, #info th{
+            border: 1px solid palevioletred;
+            padding: 8px;
+        }
+        #info tr:nth-child(even){
+            background-color: pink;
+        }
+        #info tr:hover{
+            background-color: lightpink;
+        }
+        #info th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: palevioletred;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>{{one_dojo.name}}</h1>
+        <table id="info">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+            {% for one_ninja in one_dojo.ninjas %}
+            <tr>
+                <td>{{one_ninja.first_name}}</td>
+                <td>{{one_ninja.last_name}}</td>
+                <td>{{one_ninja.age}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

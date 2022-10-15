@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        .box{
+            background-color: mistyrose;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #head{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: lightpink;
+        }
+        #count{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: palevioletred;
+        }
+        #btn{
+            padding: 10px;
+            font-size: large;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: mistyrose;
+            background-color: palevioletred;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px gainsboro;
+        }
+        #btn:hover{
+            background-color: lightpink;
+            color: palevioletred;
+        }
+        #btn:active{
+            background-color: lightpink;
+            color: palevioletred;
+            box-shadow: 0 5px grey;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body class="box">
+    <div id="head">
+        <h1>Counter</h1>
+    </div>
+    <div id="count">
+        <p>{{count}}</p>
+    </div>
+    <div>
+        <form action="/destroy_session">
+            <input type="submit" name="name" value="reset" id="btn">
+        </form>
+    </div>
+</body>
+</html>

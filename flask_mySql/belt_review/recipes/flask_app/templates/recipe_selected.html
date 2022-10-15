@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <style>
+        body{
+            background-color: mistyrose;
+            color: palevioletred;
+        }
+        .navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: palevioletred;
+            color: mistyrose;
+            padding:10px;
+        }
+        .navbar a{
+            color: mistyrose;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .description, .time, .instruction, .date{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Welcome, {{a_user.first_name}}</h1>
+        <a href="/welcome">back to recipes</a>
+        <a href="/logout">logout</a>
+    </div>
+    <div class="title">
+        <h1>
+            {{one_recipe.name}}
+        </h1>
+        <h3> Posted By: {{one_recipe.user.first_name}}</h3>
+    </div>
+    <div class="info">
+        <div class="description">
+            <h3>
+                Description:
+            </h3>
+            <h3>{{one_recipe.description}}</h3>
+        </div>
+        <div class="time">
+            <h3>
+                Under 30 Minutes?
+            </h3>
+            <h3>
+                {{"Yes" if one_recipe.time==1 else "No"}}
+            </h3>
+        </div>
+        <div class="instruction">
+            <h3>
+                Instructions:
+            </h3>
+            <h3>
+                {{one_recipe.instruction}}
+            </h3>
+        </div>
+        <div class="date">
+            <h3>
+                Date made:
+            </h3>
+            <h3>
+                {{one_recipe.date}}
+            </h3>
+        </div>
+    </div>
+</body>
+</html>

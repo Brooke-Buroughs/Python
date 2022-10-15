@@ -1,0 +1,20 @@
+to do:
+X   1. route to render open_account.html GET
+X   2. create 2 forms for creating a user and logging in, inside open_account.html
+X   3. create registration post route to accept info from form in controller 
+X   4. call a validate method ,, takes in form and returns a boolean(live in models, use in controller)
+X    for false: redirect to open_account.html and displays flash messages
+X    for true:
+        check that the email is unique 
+        hash password , pass hashed password into user database 
+        create user and save ID to session redirect into account created 
+registration in last week five lecture 
+X   5. create login post route to accept info from form in controller 
+first week 6 lecture, 
+X       validate form input to check for empty fields
+X       if empty flash message (vague) to say invalid credentials 
+X       check if the email is in the database
+X       if it is then check if password matches the one in the database
+X       save id to session, redirect to account created, welcome!
+
+logic lives in model, action happens in controller 
